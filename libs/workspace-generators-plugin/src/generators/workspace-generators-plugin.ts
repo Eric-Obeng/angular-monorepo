@@ -1,6 +1,6 @@
 import { Tree } from '@nx/devkit';
-import { GenerateAngularLibraryGeneratorSchema } from './schema';
 import { libraryGenerator } from '@nx/angular/generators';
+import { GenerateAngularLibraryGeneratorSchema } from './schema';
 
 const TYPES = ['ui', 'data-access', 'feature', 'util'];
 
@@ -17,9 +17,11 @@ export async function generateAngularLibraryGenerator(
   }
 
   const path = `libs/${options.domain}/${options.type}/${options.name}/src`;
+
   tree.delete(`${path}/lib/${options.name}`);
   tree.write(`${path}/index.ts`, '');
 }
+export default generateAngularLibraryGenerator;
 
 async function generateLibrary(
   tree: Tree,
@@ -34,10 +36,8 @@ async function generateLibrary(
     prefix: `bt-libs-${type}`,
     style: 'scss',
     changeDetection: 'OnPush',
-    directory: `${options.domain}/${type}`,
+    directory: `libs/${options.domain}/${type}`,
     tags: `domain:${options.domain}, type:${type}`,
     importPath: `@bt-libs/${options.domain}/${type}/${options.name}`,
   });
 }
-
-export default generateAngularLibraryGenerator;
