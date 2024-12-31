@@ -15,6 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@angular-monorepo/navbar": [
+        "libs/shared/ui/common-components/src/index.ts"
+      ],
+      "@angular-monorepo/common-components/*": [
+        "libs/shared/ui/common-components/src/lib/*"
+      ],
       "@angular-monorepo/workspace-generators-plugin": [
         "libs/workspace-generators-plugin/src/index.ts"
       ]
