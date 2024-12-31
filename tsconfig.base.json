@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@angular-monorepo/workspace-generators-plugin": ["libs/workspace-generators-plugin/src/index.ts"]
+      "@angular-monorepo/workspace-generators-plugin": [
+        "libs/workspace-generators-plugin/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
