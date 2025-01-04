@@ -24,5 +24,5 @@ export class NavbarComponent {
   //   return this._navItems;
   // }
 
-  @Input({ transform: addHome }) navbarItems!: NavbarItem[];
+  @Input({ transform: addHome, required: true }) navbarItems!: NavbarItem[];
 }
